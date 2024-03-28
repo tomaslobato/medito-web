@@ -85,7 +85,7 @@ export default function SideBar() {
                 </li>
                 <li className="flex items-center gap-2 lg:py-2 w-full border-black border px-2 hover:cursor-pointer hover:text-white hover:bg-black">
                   <Play size="20" />
-                  <a href="/music/relax">Relaxing Song</a>
+                  <a href="/play/relax">Relaxing Song</a>
                 </li>
               </ul>
             </div>
