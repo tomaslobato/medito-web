@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <main className="h-screen py-12 px-6 md:px-24 bg-white box-border font-mono text-2xl">
@@ -15,8 +13,8 @@ export default function Home() {
           where I try to bring to the web the experience of meditation.
         </span>{" "}
         <span>
-          {">"} It's also an open source project from which I've learned a lot while
-          building, so if you're interested here's{" "}
+          {">"} It{"'"}s also an open source project from which I{"'"}ve learned a lot while
+          building, so if you{"'"}re interested here{"'"}s{" "}
           <a
             href="https://github.com/tomaslobato/medito-web"
             className="text-link"
