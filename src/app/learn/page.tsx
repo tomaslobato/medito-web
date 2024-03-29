@@ -7,7 +7,7 @@ export default function Page() {
       <p className="w-3/4 mt-2">With Medito{"'"}s official meditation begginer course, you can find it on youtube <a href="https://youtube.com/@Medito" className="text-link">here</a></p>
       <ul className="flex flex-col p-5 gap-7">
         {audios.learn.map((day) => (
-          <li>
+          <li key={day.id}>
             <a
               href={`/play/${day.id}`}
               className="hover:bg-black hover:text-white text-xl py-3 px-6 border border-black"

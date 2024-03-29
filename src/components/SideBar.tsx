@@ -59,7 +59,7 @@ export default function SideBar() {
             <div className="rounded-xl flex flex-col justify-center items-center border-black border gap-2 hover:h-44 h-40 lg:h-40 lg:hover:h-56 transition-all sidebar-parent-div">
               <h3 className="text-2xl md:text-3xl">Learn to meditate</h3>
               <p className="text-lg lg:text-xl w-60">
-                 With Medito's begginer course
+                 With Medito{"'"}s begginer course
               </p>
               <ul className="hidden flex-col text-lg md:text-xl gap-1">
                 <li className="flex items-center gap-2 w-full border-black border px-3 hover:cursor-pointer hover:text-white hover:bg-black lg:text-2xl">
