@@ -1,6 +1,5 @@
 "use client";
 
-import { audios } from "@/audios";
 import { useEffect, useState } from "react";
 
 export default function Page() {
@@ -17,7 +16,7 @@ export default function Page() {
       setFavs(parsedFavs)
     };
     getFavs();
-  }, []);
+  }, [favs]);
 
   return (
     <main className="text-center font-mono w-full flex flex-col items-center h-screen py-14">

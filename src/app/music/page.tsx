@@ -7,7 +7,7 @@ export default function Page() {
       <h1 className="text-3xl">Meditation music</h1>
       <ul className="flex flex-col p-5 gap-7">
         {audios.music.map((day) => (
-          <li id={day.id}>
+          <li key={day.id}>
             <Link
               href={`/play/${day.id}`}
               className="hover:bg-black hover:text-white text-xl py-3 px-6 border border-black"
