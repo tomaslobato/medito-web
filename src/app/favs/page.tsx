@@ -7,34 +7,37 @@ export default function Page() {
 
   useEffect(() => {
     const getFavs = () => {
-      let gotFavs = localStorage.getItem("favs") as string;
-      if (!favs) {
+      let gotFavs = localStorage.getItem("favs");
+      if (!gotFavs) {
         localStorage.setItem("favs", JSON.stringify([]));
         gotFavs = "[]";
       }
-      const parsedFavs = JSON.parse(gotFavs);
-      setFavs(parsedFavs)
+      setFavs(JSON.parse(gotFavs));
     };
     getFavs();
-  }, [favs]);
+  }, []);
 
   return (
     <main className="text-center font-mono w-full flex flex-col items-center h-screen py-14">
       <h1 className="text-3xl">Your favorite audios</h1>
-      <ul className="flex flex-col p-5 gap-7">
-        {favs.map((item) => {
-          return (
-            <li key={item}>
-              <a
-                href={item}
-                className="hover:bg-black hover:text-white text-xl py-3 px-6 border border-black"
-              >
-                {item}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      {favs.length > 0 ? (
+        <ul className="flex flex-col p-5 gap-7">
+          {favs.map((item: string) => {
+            return (
+              <li key={item}>
+                <a
+                  href={`/play/${item}`}
+                  className="hover:bg-black hover:text-white text-xl py-3 px-6 border border-black"
+                >
+                  {item}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <span className="mt-5">Nothing here yet...</span>
+      )}
     </main>
   );
 }
