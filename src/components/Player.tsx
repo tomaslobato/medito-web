@@ -9,6 +9,7 @@ import Volume from "./Icons/Volume";
 import Muted from "./Icons/Muted";
 import Star from "./Icons/Star";
 import FilledStar from "./Icons/FilledStar";
+import { saveStreak } from "@/utils/saveStreak";
 
 export default function Player({
   audioSrc,
@@ -39,6 +40,21 @@ export default function Player({
     };
     getFavs();
   }, [id]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.addEventListener("ended", handleAudioEnded);
+      return () => {
+        audio.removeEventListener("ended", handleAudioEnded);
+      };
+    }
+  }, []);
+
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
+    saveStreak()
+  };
 
   const togglePlay = () => {
     if (!isPlaying) {
