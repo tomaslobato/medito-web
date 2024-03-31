@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="h-screen py-12 px-6 md:px-24 bg-white box-border font-mono text-2xl">
@@ -22,9 +24,9 @@ export default function Home() {
             the code
           </a>
         </span>
-        <a href="/login" className="text-link">
-          Log in for free to unlock your streak
-        </a>
+        <Link href="/login" className="text-link">
+          Unlock your streak with your first meditation!
+        </Link>
       </p>
     </main>
   );

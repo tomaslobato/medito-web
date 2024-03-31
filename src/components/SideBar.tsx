@@ -9,8 +9,14 @@ import Link from "next/link";
 
 export default function SideBar() {
   const [hidden, setHidden] = useState(false);
+  const [selected, setSelected] = useState("5")
 
   const toggleSideBar = () => setHidden(!hidden)
+
+  const handleOptionChange = (ev: React.ChangeEvent<HTMLSelectElement> ) => {
+    console.log(ev.target.value)
+    setSelected(ev.target?.value)
+  }
 
   return (
     <>
@@ -40,15 +46,15 @@ export default function SideBar() {
                 You set the time for the session
               </p>
               <form className="hidden gap-2 text-lg lg:text-xl">
-                <select className="border-black border">
-                  <option value="">5min</option>
-                  <option value="">10min</option>
-                  <option value="">15min</option>
-                  <option value="">20min</option>
-                  <option value="">30min</option>
+                <select className="border-black border0" onChange={handleOptionChange}>
+                  <option value="5">5min</option>
+                  <option value="10">10min</option>
+                  <option value="15">15min</option>
+                  <option value="20">20min</option>
+                  <option value="30">30min</option>
                 </select>
                 <Link
-                  href="/meditations/timer?t=5"
+                  href={`/play/timer/${selected}`}
                   className="bg-black text-white p-2 hover:bg-white hover:text-black border border-black"
                 >
                   <Play size="20" />
