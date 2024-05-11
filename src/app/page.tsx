@@ -24,7 +24,7 @@ export default function Home() {
             the code
           </a>
         </span>
-        <Link href="/login" className="text-link">
+        <Link href="/play/learn-day-1" className="text-link">
           Unlock your streak with your first meditation!
         </Link>
       </p>
